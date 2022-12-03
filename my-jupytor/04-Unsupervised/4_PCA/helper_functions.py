@@ -40,8 +40,8 @@ def show_images(num_images):
     '''
     if num_images % 10 == 0 and num_images <= 100:
         for digit_num in range(0,num_images):
-            plt.subplot(num_images/10,10,digit_num+1) #create subplots
-            mat_data = X.iloc[digit_num].as_matrix().reshape(28,28)  #reshape images
+            plt.subplot((int)(num_images/10),10,digit_num+1) #create subplots
+            mat_data = X.iloc[digit_num].to_numpy().reshape(28,28)  #reshape images
             plt.imshow(mat_data) #plot the data
             plt.xticks([]) #removes numbered labels on x-axis
             plt.yticks([]) #removes numbered labels on y-axis
@@ -60,7 +60,7 @@ def show_images_by_digit(digit_to_see):
         indices = np.where(y == digit_to_see) # pull indices for num of interest
         for digit_num in range(0,50):
             plt.subplot(5,10, digit_num+1) #create subplots
-            mat_data = X.iloc[indices[0][digit_num]].as_matrix().reshape(28,28)  #reshape images
+            mat_data = X.iloc[indices[0][digit_num]].to_numpy().reshape(28,28)  #reshape images
             plt.imshow(mat_data) #plot the data
             plt.xticks([]) #removes numbered labels on x-axis
             plt.yticks([]) #removes numbered labels on y-axis

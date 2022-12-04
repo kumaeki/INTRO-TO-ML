@@ -3,3 +3,5 @@
 **/.pytorch
 **/F_MNIST_data
 **/4_PCA/data
+**/5_ICA/data
+**/__pycache__
